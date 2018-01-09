@@ -3,7 +3,9 @@ const express = require('express')
 
 const app = express()
 
-app.get('/', (req, res) => {
+app.use(express.static(path.join(__dirname, "client")));
+
+app.get('/hey', (req, res) => {
     res.json('hey there')
 })
 
